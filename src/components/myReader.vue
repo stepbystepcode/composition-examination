@@ -52,12 +52,12 @@ export default {
       str: 0,
       style: 0,
       imgNum: 0,
-      status: true,
+      status: true
     };
   },
   mounted() {
     fetch(
-      "https://api.bookan.com.cn/resource/yearList?resourceType=1&resourceId=6217&year=2022&pageNum=1&limitNum=50"
+      `https://api.bookan.com.cn/resource/yearList?resourceType=1&resourceId=6217&year=${window.location.search.slice(6)}&pageNum=1&limitNum=50`
     )
       .then((res) => {
         return res.json();
